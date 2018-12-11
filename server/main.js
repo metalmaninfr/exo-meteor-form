@@ -8,7 +8,8 @@ Meteor.startup(() => {
   {
     people.insert(
       {
-        name : "Alex"
+        name : "Alex",
+        mail : "alex@hostnfly.com"
       }
     );
   }
