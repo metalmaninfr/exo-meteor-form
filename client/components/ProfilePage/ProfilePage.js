@@ -15,21 +15,28 @@ const ProfilePage = ({
   onClickRemove,
 }) => (
   <div>
-    <p onClick={() => goBack()}>Go Back</p>
-    {editName ?
-      <h1>Welcome<input onChange={event => handleChange(event)} /></h1>
-    :
-    <h1>{`Welcome ${name}`}</h1>
-    }
-    <span onClick={() => updateName()}>{editName ? 'update' : 'edit'}</span>
-    {editMail ?
-      <p>you're email is <input onChange={event => handleChange(event)} /></p>
-      :
-      <p>{`you're email is ${mail}`}</p>
-    }
-    <span onClick={() => updateMail()}>{editName ? 'update' : 'edit'}</span>
-    <br />
-    <button onClick={() => onClickRemove()}>Delete</button>
+    <p style={{ cursor: "pointer", padding: '1rem' }} onClick={() => goBack()}>Go back</p>
+    <div className="Profile">
+      <div className='title-container Form-container-input'>
+      {editName ?
+        <h1>Welcome <input onChange={event => handleChange(event)} /></h1>
+        :
+        <h1>{`Welcome ${name}`}</h1>
+        }
+      </div>
+      <div className="Form-container-input">
+      {editMail ?
+        <p>you're email is <input onChange={event => handleChange(event)} /></p>
+        :
+        <p>{`you're github is ${mail}`}</p>
+      }
+      </div>
+      <div className="params">
+        <button onClick={() => updateName()}>{editName ? 'update name' : 'edit name'}</button>
+        <button onClick={() => updateMail()}>{editMail ? 'update github' : 'edit github'}</button>
+        <button onClick={() => onClickRemove()}>Delete</button>
+      </div>
+    </div>
   </div>
 );
 

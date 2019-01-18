@@ -8,7 +8,7 @@ class ProfilePageContainer extends Component {
     super(props);
     this.state = {
       editName: false,
-      editMail: true,
+      editMail: false,
       nameInput: '',
       mailInput: '',
     }
@@ -27,7 +27,7 @@ class ProfilePageContainer extends Component {
     if (this.state.editName) {
       people.update({ _id: this.props.tasks._id }, { $set: { name: this.state.nameInput }});
     }
-    this.setState({ editName: !this.state.editName});
+    this.setState({ editName: !this.state.editName });
   }
 
   updateMail = () => {
@@ -43,6 +43,10 @@ class ProfilePageContainer extends Component {
 
   render() {
     const { tasks } = this.props;
+
+    console.log(tasks);
+    
+    
     return (
       <ProfilePage
         goBack={() => this.goBack()}

@@ -1,0 +1,16 @@
+.Profile {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  height: 20vh;
+  text-align: center;
+}
+
+
+.params {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
